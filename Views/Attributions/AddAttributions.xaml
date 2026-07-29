@@ -1,0 +1,144 @@
+﻿<Page x:Class="WpfApplication2.Views.Attributions.AddAttributions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication2.Views.Attributions"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="AddAttributions">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*" />
+
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+
+
+
+
+
+
+
+
+        <Grid Grid.Row="0" Grid.Column="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <StackPanel Orientation="Vertical">
+
+                    <StackPanel Height="30" Orientation="Horizontal" Margin="0 20 0 0">
+                        <TextBlock Text="Id Attribution :" FontSize="15" Width="150" Height="30" Margin="20 0 0 0" />
+                        <TextBox x:Name="IdAttribution" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+                    
+                    <StackPanel Height="30" Orientation="Horizontal" Margin="0 30 0 0">
+                        <TextBlock Text="Raison Sociale :" FontSize="15" Width="150" Height="30" Margin="20 0 0 0" />
+                        <ComboBox SelectionChanged="InputIdInvestisseur_SelectionChanged" x:Name="InputIdInvestisseur" BorderThickness="1" Width="200" Height="30" Margin="0,0,0,0.4" />
+                    </StackPanel>
+
+                    
+
+                    <StackPanel Height="30" Orientation="Horizontal" Margin="0 20 0 0" >
+                        <TextBlock Text="Nom de Zone :" FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <ComboBox  x:Name="IdZone" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" SelectionChanged="IdZone_SelectionChanged" />
+                    </StackPanel>
+
+                   
+
+
+                    <StackPanel Height="30" Orientation="Horizontal" Margin="0 30 0 0">
+                        <TextBlock Text="Num lot :" FontSize="15" Width="150" Height="30" Margin="20 0 0 0"/>
+                        <ComboBox SelectionChanged="InputNumLot_SelectionChanged" x:Name="InputNumLot" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0.4"/>
+                    </StackPanel>
+
+
+
+
+
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 20 0 0">
+                        <TextBlock Text="Id Lot:"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <TextBox x:Name="InputIdLot" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 20 0 0">
+                        <TextBlock Text="Mode :"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <ComboBox x:Name="Mode"   BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+
+
+
+
+
+
+
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1" >
+                <StackPanel Orientation="Vertical" >
+
+
+
+
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 20 0 0">
+                        <TextBlock Text="Référence Arrête Wali :"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <TextBox x:Name="RefArreteWali" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 30 0 0">
+                        <TextBlock Text="Date Arrête :"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <DatePicker x:Name="DateArreteWali" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 30 0 0">
+                        <TextBlock Text="Acte:"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <TextBox x:Name="Acte" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 30 0 0">
+                        <TextBlock Text="Date Acte:"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <DatePicker x:Name="DateActe" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 20 0 0">
+                        <TextBlock Text="Projet :"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                        <TextBox x:Name="Projet" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+                    </StackPanel>
+
+
+                    <StackPanel Height="30" Orientation="Horizontal"  Margin="0 20 0 0">
+                    <TextBlock Text="Observation :"  FontSize="15" Width="150" Height="30"  Margin="20 0 0 0"/>
+                    <TextBox x:Name="Observation" BorderThickness="1" Width="200" Height="30" Margin="0 0 0 0" />
+       
+                        
+                    </StackPanel>
+
+
+                </StackPanel>
+            </Grid>
+
+
+
+
+
+
+
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Button x:Name="BtnAjtAtt" HorizontalAlignment="Left" Height="35" Width="100" Content="Ajouter" FontSize="14" VerticalAlignment="Center" Margin="180,0,0,0" Click="BtnAjtAtt_Click"   ></Button>
+            <Button x:Name="BtnModAtt" Click="BtnModAtt_Click" Height="35" Width="100" Content="Modifier" FontSize="14" HorizontalAlignment="Center"  ></Button>
+            <Button x:Name="BtnSuppAtt" Click="BtnSuppAtt_Click" Height="35" Width="100" Content="Supprimer" FontSize="14" HorizontalAlignment="Right" Margin="0,0,180,0"  ></Button>
+              </Grid>
+    </Grid>
+</Page>

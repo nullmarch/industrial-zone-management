@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfApplication2.Views.Login.CreationU"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication2.Views.Login"
+      mc:Ignorable="d" 
+      d:DesignHeight="760" d:DesignWidth="450"
+      Title="CreationU">
+
+    <Grid Background="White">
+        <TextBlock Margin="0 100 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="28"
+                           FontWeight="Bold" Text="Bienvenue!"/>
+        <TextBlock FontSize="17" FontWeight="SemiBold" Margin="0 140 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Créer un utilisateur "/>
+
+        <TextBox Margin="0 0 0 80" x:Name="usernameInput" Width="300 " VerticalAlignment="Center" FontSize="18" materialDesign:HintAssist.Hint="nom d'utilisateur"
+                         BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"/>
+        <PasswordBox  Margin="0 100 0 80" x:Name="passwordInput" Width="300" FontSize="18" 
+                             materialDesign:HintAssist.Hint="mot de passe" VerticalAlignment="Center" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
+           />
+
+        <PasswordBox  Margin="0 120 0 0" x:Name="passwordConfirm" Width="300" FontSize="18" 
+                             materialDesign:HintAssist.Hint="confirmer" VerticalAlignment="Center" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
+           />
+
+
+
+
+
+
+        <Button  x:Name="BtnConnxNavigate" Click="BtnConnxNavigate_Click" Margin="0 420 0 60" VerticalAlignment="Center"  Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                        Height="53" Width="300" 
+                FontSize="18" Content="Connexion"/>
+
+        <Button  x:Name="BtnCreeU1" Click="BtnCreeU1_Click" Margin="0 290 0 60" VerticalAlignment="Center"  Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+                        Height="53" Width="300" 
+                FontSize="18" Content="Créer Utilisateur"/>
+        
+    </Grid>
+</Page>

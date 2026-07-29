@@ -1,0 +1,91 @@
+﻿<Page x:Class="WpfApplication2.Views.Lots.ListLots"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:WpfApplication2.Views.Lots"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="ListLots">
+
+    <Grid  Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="75*"/>
+
+
+        </Grid.RowDefinitions>
+
+
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Label  FontSize="16" >Listes des Lots</Label>
+            <ComboBox materialDesign:HintAssist.Hint="Recherche par" x:Name="SwitchRecherche"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="100" Height="25"  Margin="15,0,0,15"  >
+                <ComboBoxItem Content="Nom de Zone"/>
+                <ComboBoxItem Content="Daira"/>
+                <ComboBoxItem Content="Commune"/>
+                <ComboBoxItem Content="N°Lot"/>
+            </ComboBox >
+            <TextBox materialDesign:HintAssist.Hint="Tapez ici"  x:Name="InputRecherche" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="25" Width="100"  HorizontalContentAlignment="Left" KeyUp="InputRecherche_KeyUp" VerticalContentAlignment="Top" Margin="125 0 0 15" ></TextBox>
+            <ComboBox materialDesign:HintAssist.Hint="Order Par" x:Name="SwitchRecherche1"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="100" Height="25"  Margin="230,0,0,15"  >
+                <ComboBoxItem Content="Nom de Zone"/>
+                <ComboBoxItem Content="Daira"/>
+                <ComboBoxItem Content="Commune"/>
+                <ComboBoxItem Content="N°Lot"/>
+            </ComboBox >
+            <Button  x:Name="Ordre" Click="Ordre_Click"  Height="25" FontSize="10" Width="90" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Margin="335,0,375,16"  >
+                <Viewbox>
+                    <TextBlock TextWrapping="Wrap"  TextAlignment="Center" Text="ORDRE ASC-DESC"></TextBlock>
+                </Viewbox>
+            </Button>
+
+            <ComboBox materialDesign:HintAssist.Hint="Requete de Recherche" x:Name="SwitchRecherche2"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="150" Height="25"  Margin="450,0,200,16"  >
+                <ComboBoxItem Content="Zone(Total Lots)"/>
+                <ComboBoxItem Content="Zone(plusierus Lot)"/>
+
+            </ComboBox>
+
+            <Button Content="FILTRER" x:Name="FILTRE" Click="FILTRE_Click" Height="25" FontSize="10" Width="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Top"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,105,16"></Button>
+
+            <Button Content="RAFRAÎCHIR" x:Name="Actualiser" Click="Actualiser_Click" Height="25" FontSize="10" Width="90" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Margin="0,0,10,16" ></Button>
+        </Grid>
+
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Button x:Name="AjtListLots" Click="AjtListLots_Click" Height="25" Width="80" Content="Ajouter" FontSize="10" VerticalAlignment="Center" Margin="40,33,40,242"  ></Button>
+                <Button x:Name="SuppListLots"  Height="25" Width="80" Content="Supprimer" FontSize="10" VerticalAlignment="Center" Margin="40,118,40,157" Click="SuppListLots_Click" ></Button>
+                <Button x:Name="ModListLots" Click="ModListLots_Click" Height="25" Width="80" Content="Modifier" FontSize="10" VerticalAlignment="Center" Margin="40,76,40,199" ></Button>
+            </Grid>
+
+
+
+
+
+
+            <DataGrid HorizontalScrollBarVisibility="Visible" SelectionChanged="DataGridLot_SelectionChanged" x:Name="DataGridLot" AutoGenerateColumns="False" CanUserResizeRows="True" ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=IdLot}" Header="IdLot" Width="auto" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=NomDeZone}" Header="Nom de Zone"  Width="auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=NomDaira}" Header="Nom Daira"  Width="auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=NomCommune}" Header="Nom Commune"  Width="auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=NumLot}" Header="N° Lot"  Width="auto" IsReadOnly="True"  />
+                    <DataGridTextColumn Binding="{Binding Path=Ilot}" Header="Ilot" Width="auto" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding Path=Surface}" Header="Surface"  Width="auto" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+        </Grid>
+
+
+
+    </Grid>
+</Page>
