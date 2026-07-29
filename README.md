@@ -36,7 +36,23 @@ migrated to Visual Studio Community 2026.
 
 <img width="1346" height="896" alt="screenshot-sort" src="https://github.com/user-attachments/assets/08d4d8fb-92e2-48d2-9a2b-b92425c9b5e7" />
 
+## Database Schema
 
+<img width="882" height="542" alt="Database_schem" src="https://github.com/user-attachments/assets/32c38b0f-be8e-4abd-be36-6bd056c0c496" />
+
+
+
+## Design Decisions
+The initial conceptual model placed attribution references 
+inside the Lot table. During implementation this was refactored 
+into a dedicated Attribution junction table with foreign keys 
+to both Lot and Investisseur, correctly modeling the 
+many-to-many relationship between lots and investors.
+Zones and lots represent fixed physical infrastructure that 
+rarely changes. Attribution is the transactional entity — 
+recording which investor occupies which lot. This distinction 
+drove the separation of static reference data (zones, lots) 
+from dynamic transactional records (attributions).
 
 ## Tech Stack
 - **Language:** C# with WPF and XAML
